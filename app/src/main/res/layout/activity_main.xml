@@ -62,6 +62,16 @@
                 android:layout_marginRight="24dp"
                 android:onClick="addOneForTeamA"
                 android:text="Free throw" />
+            <TextView
+                android:id="@+id/winner_team_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:paddingBottom="24dp"
+                android:text=""
+                android:textColor="#00BFA5"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <View
@@ -123,6 +133,16 @@
                 android:layout_marginRight="22dp"
                 android:onClick="addOneForTeamB"
                 android:text="Free throw" />
+            <TextView
+                android:id="@+id/winner_team_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:paddingBottom="24dp"
+                android:text=""
+                android:textColor="#00BFA5"
+                android:textSize="30sp" />
         </LinearLayout>
     </LinearLayout>
 
