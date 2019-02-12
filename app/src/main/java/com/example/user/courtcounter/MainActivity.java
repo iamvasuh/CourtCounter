@@ -1,5 +1,6 @@
 package com.example.user.courtcounter;
 
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +9,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
+    String message= "WINNER !!";
+    String draw= "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
     public void resetScore(View V){
         displayForTeamA(0);
         displayForTeamB(0);
+        scoreTeamA = 0;
+        scoreTeamB = 0;
+        winnerTeamA(draw);
+        winnerTeamB(draw);
 
     }
 
@@ -78,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
+        winnerClass( scoreTeamA ,  scoreTeamB);
     }
 
     /**
@@ -86,5 +95,29 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
+        winnerClass( scoreTeamA ,  scoreTeamB);
+
+    }
+
+
+    private void winnerClass(int scoreTeamA , int scoreTeamB) {
+        if( scoreTeamB < scoreTeamA){
+            winnerTeamA(message);
+        }
+        else if (scoreTeamB > scoreTeamA){
+            winnerTeamB(message);
+        }
+        else {
+            winnerTeamA(draw);
+            winnerTeamB(draw);
+        }
+    }
+    private void winnerTeamA(String message){
+        TextView priceTextView = (TextView) findViewById(R.id.winner_team_a);
+        priceTextView.setText(message);
+    }
+    private void winnerTeamB(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.winner_team_b);
+        priceTextView.setText(message);
     }
 }
